@@ -2,200 +2,61 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt Wielkanoc - Klasa 4</title>
     <style>
-        /* Główne ustawienia strony */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-       
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7fbf7;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Górny pasek nawigacji (Zakładki) */
-        nav {
-            background-color: #2e7d32;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: #4caf50;
-        }
-
-        /* Nagłówek strony - ZDJĘCIE W TLE (Polskie pisanki) */
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pisanki.jpg/1024px-Pisanki.jpg') no-repeat center center/cover;
-            height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            text-align: center;
-            margin-top: 48px;
-        }
-
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        /* Kontener na sekcje */
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* Styl każdej sekcji */
-        section {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            scroll-margin-top: 70px;
-        }
-
-        section h2 {
-            color: #2e7d32;
-            border-bottom: 3px solid #ffcc00;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* Układ ze zdjęciem obok tekstu */
-        .content-box {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .content-text {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .content-img {
-            flex: 1;
-            min-width: 280px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        /* Sekcja z życzeniami */
-        .zyczenia-box {
-            background-color: #fffde7;
-            border: 3px dashed #ffb300;
-            padding: 30px;
-            text-align: center;
-            border-radius: 12px;
-        }
-
-        .zyczenia-tekst {
-            font-size: 1.4em;
-            color: #d84315;
-            font-weight: bold;
-            line-height: 1.8;
-        }
+        body { font-family: sans-serif; background: #f7fbf7; padding-top: 60px; }
+        nav { background: #2e7d32; position: fixed; top: 0; width: 100%; display: flex; justify-content: center; padding: 15px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        header { text-align: center; padding: 50px; background: #c8e6c9; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; }
+        .box { display: flex; align-items: center; gap: 20px; }
+        img { width: 300px; height: 200px; object-fit: cover; border-radius: 8px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#co-to">Co to Wielkanoc</a></li>
-            <li><a href="#kiedy">Kiedy jest</a></li>
-            <li><a href="#co-robimy">Co robimy</a></li>
-            <li><a href="#zyczenia">Życzenia</a></li>
-        </ul>
-    </nav>
+<nav>
+    <a href="#co-to">Co to Wielkanoc</a>
+    <a href="#kiedy">Kiedy jest</a>
+    <a href="#co-robimy">Co robimy</a>
+    <a href="#zyczenia">Życzenia</a>
+</nav>
 
-    <header>
-        <h1>Wszystkiego Najlepszego!</h1>
-        <p>Projekt na lekcję informatyki</p>
-    </header>
+<header>
+    <h1>Wszystkiego Najlepszego!</h1>
+</header>
 
-    <div class="container">
+<div class="container">
+    <section id="co-to">
+        <h2>Co to jest Wielkanoc?</h2>
+        <div class="box">
+            <p>Wielkanoc to najważniejsze święto chrześcijańskie upamiętniające zmartwychwstanie Jezusa. To czas radości i wiosny.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Pisanki.jpg" alt="Pisanki">
+        </div>
+    </section>
 
-        <section id="co-to">
-            <h2>Co to jest Wielkanoc?</h2>
-            <div class="content-box">
-                <div class="content-text">
-                    <p>Wielkanoc to najstarsze i najważniejsze święto chrześcijańskie. Upamiętnia ono zmartwychwstanie Jezusa Chrystusa. Jest to czas pełen radości, budzącej się do życia przyrody oraz spotkań w gronie najbliższej rodziny przy świątecznym stole.</p>
-                </div>
-                <img class="content-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Easter_bunny_with_eggs_02.jpg/800px-Easter_bunny_with_eggs_02.jpg" alt="Zajączek wielkanocny">
-            </div>
-        </section>
+    <section id="kiedy">
+        <h2>Kiedy wypada Wielkanoc?</h2>
+        <div class="box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Crocus_vernus_2.jpg" alt="Wiosna">
+            <p>Wielkanoc jest świętem ruchomym, wypada w pierwszą niedzielę po pierwszej wiosennej pełni księżyca.</p>
+        </div>
+    </section>
 
-        <section id="kiedy">
-            <h2>Kiedy wypada Wielkanoc?</h2>
-            <div class="content-box">
-                <img class="content-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Crocus_vernus_2.jpg/800px-Crocus_vernus_2.jpg" alt="Wiosenna łąka wielkanocna">
-                <div class="content-text">
-                    <p>Wielkanoc jest świętem ruchomym. Oznacza to, że co roku wypada w inny dzień! Zawsze świętujemy ją w <strong>pierwszą niedzielę po pierwszej wiosennej pełni księżyca</strong>. Najczęściej wypada na przełomie marca i kwietnia.</p>
-                </div>
-            </div>
-        </section>
+    <section id="co-robimy">
+        <h2>Co robimy podczas Wielkanocy?</h2>
+        <div class="box">
+            <p>Malujemy pisanki, przygotowujemy koszyczek ze święconką i świętujemy w rodzinnym gronie.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Traditional_Polish_Easter_basket.jpg" alt="Koszyczek">
+        </div>
+    </section>
 
-        <section id="co-robimy">
-            <h2>Co robimy podczas Wielkanocy?</h2>
-            <div class="content-box">
-                <div class="content-text">
-                    <p>Z Wielkanocą wiąże się mnóstwo wspaniałych tradycji:</p>
-                    <br>
-                    <ul>
-                        <li><strong>Malowanie pisanek:</strong> Ozdabiamy jajka na różne kolory i wzory.</li>
-                        <li><strong>Święconka:</strong> W Wielką Sobotę idziemy do kościoła z koszyczkiem pełnym jedzenia (jajka, chleb, kiełbasa, baranek).</li>
-                        <li><strong>Śmigus-Dyngus:</strong> W Lany Poniedziałek polewamy się wodą na szczęście!</li>
-                    </ul>
-                </div>
-                <img class="content-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Traditional_Polish_Easter_basket.jpg/800px-Traditional_Polish_Easter_basket.jpg" alt="Koszyczek wielkanocny ze święconką">
-            </div>
-        </section>
-
-        <section id="zyczenia">
-            <h2>Wielkanocne Życzenia</h2>
-            <div class="zyczenia-box">
-                <p class="zyczenia-tekst">
-                    Dużo jajek, dużo miłości oraz szczęścia i pomyślności.<br>
-                    A także królików, dużo piękności oraz mądrości i grzeczności!
-                </p>
-            </div>
-        </section>
-
-    </div>
+    <section id="zyczenia">
+        <h2>Wielkanocne Życzenia</h2>
+        <p>Dużo jajek, dużo miłości oraz szczęścia i pomyślności. A także królików, dużo piękności oraz mądrości i grzeczności!</p>
+    </section>
+</div>
 
 </body>
 </html>
