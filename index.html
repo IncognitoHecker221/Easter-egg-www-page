@@ -3,78 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wszystkiego najlepszego z okazji Wielkanocy!</title>
+    <title>Projekt Wielkanoc - Klasa 4</title>
     <style>
-        /* Styl dla całej strony - wielkanocne, jasne tło */
+        /* Główne ustawienia strony */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+       
         body {
-            background-color: #f4f9f4;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7fbf7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Górny pasek nawigacji (Zakładki) */
+        nav {
+            background-color: #2e7d32;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
             display: flex;
             justify-content: center;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4caf50;
+        }
+
+        /* Nagłówek strony */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=1200&auto=format&fit=crop') no-repeat center center/cover;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* Styl dla ramki z życzeniami */
-        .wielkanoc-card {
-            background-color: white;
-            border: 4px dashed #ffcc00; /* Żółta, przerywana ramka */
-            border-radius: 20px;
-            padding: 40px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             text-align: center;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 90%;
+            margin-top: 48px; /* miejsce na stałe menu */
         }
 
-        /* Główny nagłówek */
-        h1 {
-            color: #2e7d32; /* Zielony wielkanocny */
-            font-size: 2.5em;
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        /* Kontener na sekcje */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Styl każdej sekcji */
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            scroll-margin-top: 70px; /* poprawka przewijania do menu */
+        }
+
+        section h2 {
+            color: #2e7d32;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
 
-        /* Tekst życzeń */
-        .zyczenia {
+        /* Układ ze zdjęciem obok tekstu */
+        .content-box {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .content-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .content-img {
+            flex: 1;
+            min-width: 280px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Sekcja z życzeniami */
+        .zyczenia-box {
+            background-color: #fffde7;
+            border: 3px dashed #ffb300;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .zyczenia-tekst {
             font-size: 1.4em;
+            color: #d84315;
+            font-weight: bold;
             line-height: 1.8;
-            color: #e65100; /* Ciepły pomarańczowy */
-            font-weight: bold;
-            margin-bottom: 30px;
         }
 
-        /* Informacje dla nauczyciela (stopka) */
+        /* Stopka dla nauczyciela */
         footer {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
-            color: #555;
-            font-size: 1em;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9em;
         }
 
-        .klasa {
-            color: #0288d1;
-            font-weight: bold;
+        footer strong {
+            color: #ffcc00;
         }
     </style>
 </head>
 <body>
 
-    <div class="wielkanoc-card">
-        <h1>Wszystkiego najlepszego<br>z okazji Wielkanocy!</h1>
-       
-        <p class="zyczenia">
-            Dużo jajek, dużo miłości oraz szczęścia i pomyślności.<br>
-            A także królików, dużo piękności oraz mądrości i grzeczności.
-        </p>
+    <!-- Zakładki na górze strony -->
+    <nav>
+        <ul>
+            <li><a href="#co-to">Co to Wielkanoc</a></li>
+            <li><a href="#kiedy">Kiedy jest</a></li>
+            <li><a href="#co-robimy">Co robimy</a></li>
+            <li><a href="#zyczenia">Życzenia</a></li>
+        </ul>
+    </nav>
 
-        <footer>
-            <p>Strona do oceny przez <strong>panią Agnieszkę</strong> z informatyki</p>
-            <p class="klasa">Klasa 4</p>
-            <p><em>Autor: [Tutaj wpisz swoje Imię i Nazwisko]</em></p>
-        </footer>
+    <!-- Główny banner -->
+    <header>
+        <h1>Wszystkiego Najlepszego!</h1>
+        <p>Projekt na lekcję informatyki</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Sekcja 1: Co to Wielkanoc -->
+        <section id="co-to">
+            <h2>Co to jest Wielkanoc?</h2>
+            <div class="content-box">
+                <div class="content-text">
+                    <p>Wielkanoc to najstarsze i najważniejsze święto chrześcijańskie. Upamiętnia ono zmartwychwstanie Jezusa Chrystusa. Jest to czas pełen radości, budzącej się do życia przyrody oraz spotkań w gronie najbliższej rodziny przy świątecznym stole.</p>
+                </div>
+                <img class="content-img" src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=500&auto=format&fit=crop" alt="Wielkanocny kurczaczek i czekolada">
+            </div>
+        </section>
+
+        <!-- Sekcja 2: Kiedy jest -->
+        <section id="kiedy">
+            <h2>Kiedy wypada Wielkanoc?</h2>
+            <div class="content-box">
+                <img class="content-img" src="https://images.unsplash.com/photo-1521624213010-9fb0f30fcd20?q=80&w=500&auto=format&fit=crop" alt="Wiosenne kwiaty">
+                <div class="content-text">
+                    <p>Wielkanoc jest świętem ruchomym. Oznacza to, że co roku wypada w inny dzień! Zawsze świętujemy ją w **pierwszą niedzielę po pierwszej wiosennej pełni księżyca**. Najczęściej wypada na przełomie marca i kwietnia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja 3: Co podczas niej robimy -->
+        <section id="co-robimy">
+            <h2>Co robimy podczas Wielkanocy?</h2>
+            <div class="content-box">
+                <div class="content-text">
+                    <p>Z Wielkanocą wiąże się mnóstwo wspaniałych tradycji:</p>
+                    <br>
+                    <ul>
+                        <li><strong>Malowanie pisanek:</strong> Ozdabiamy jajka na różne kolory i wzory.</li>
+                        <li><strong>Święconka:</strong> W Wielką Sobotę idziemy do kościoła z koszyczkiem pełnym jedzenia (jajka, chleb, kiełbasa, baranek).</li>
+                        <li><strong>Śmigus-Dyngus:</strong> W Lany Poniedziałek polewamy się wodą na szczęście!</li>
+                    </ul>
+                </div>
+                <img class="content-img" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=500&auto=format&fit=crop" alt="Kolorowe pisanki">
+            </div>
+        </section>
+
+        <!-- Sekcja 4: Życzenia -->
+        <section id="zyczenia">
+            <h2>Wielkanocne Życzenia</h2>
+            <div class="zyczenia-box">
+                <p class="zyczenia-tekst">
+                    Dużo jajek, dużo miłości oraz szczęścia i pomyślności.<br>
+                    A także królików, dużo piękności oraz mądrości i grzeczności!
+                </p>
+            </div>
+        </section>
+
     </div>
 
+    <!-- Stopka dla nauczyciela -->
+    <footer>
+        <p>Strona przygotowana do oceny przez <strong>panią Agnieszkę</strong></p>
+        <p>Przedmiot: Informatyka | <strong>Klasa 4</strong></p>
+        <p style="margin-top: 10px; font-size: 0.8em; color: #aaa;">Autor: [Wpisz swoje Imię i Nazwisko]</p>
+    </footer>
+
 </body>
-</html>
+</html>ka
